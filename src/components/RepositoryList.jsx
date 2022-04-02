@@ -15,7 +15,7 @@ export function RepositoryList(){
   const [repositories, setRepositories] = useState([]);
 
   useEffect(() => {
-    fetch('https://api.github.com/users/Lucas-Onofre/repos')
+      fetch('https://api.github.com/users/Lucas-Onofre/repos')
       .then(response => response.json())
       .then(data => setRepositories(data))
   }, []);
@@ -28,7 +28,6 @@ export function RepositoryList(){
         {repositories.map(repository => {
           return <RepositoryItem key={repository.id} repository={repository} />
         })}
-        
       </ul>
     </section>
   );
